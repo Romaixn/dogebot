@@ -8,7 +8,7 @@ class CoinFlipCommand extends commando.Command {
             group: 'games',
             memberName: 'flip',
             description: 'Lance une pièce',
-            examples: ['!flip'],
+            examples: ['!flip <pile/face>'],
             args: [
                 {
                     key: 'args',

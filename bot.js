@@ -34,7 +34,7 @@ bot.registry
 
 // Initialisation du BOT
 bot.on('ready', () => {
-    console.log("DOGE BOT CONNECTED");
+    console.log("---------- DOGE BOT CONNECTED ----------");
     bot.user.setActivity("zizi-couilles.fr");
 });
 
