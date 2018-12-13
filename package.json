@@ -1,0 +1,32 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "Bot Discord",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/r.herault/bot.git"
+  },
+  "keywords": [],
+  "author": "Romain Herault",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/r.herault/bot/issues"
+  },
+  "homepage": "https://gitlab.com/r.herault/bot#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "discord.js-commando": "^0.10.0",
+    "kaori": "^1.2.0",
+    "node-opus": "^0.3.1",
+    "node-wolfram": "0.0.1",
+    "random-puppy": "^1.1.0",
+    "scrape-it": "^5.1.0",
+    "sqlite": "^3.0.0",
+    "sqlite3": "^4.0.4",
+    "youtube-audio-stream": "^0.2.0"
+  }
+}
