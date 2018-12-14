@@ -1,6 +1,6 @@
 const { Command } = require('discord.js-commando');
 const { RichEmbed } = require('discord.js');
-var sql = require('sqlite3');
+var sql = require('sqlite3').verbose();
 
 var db = new sql.Database('data/database.db');
 
@@ -16,17 +16,26 @@ class MoneyCommand extends Command {
     }
 
     run(message){
-        db.each("SELECT money from users where nom = ?",[message.author.username], function(err, row){
+        var get = function(money){
+            let embed = new RichEmbed()
+                .setDescription("Vous avez : " + money + "€")
+                .setAuthor(message.author.username, message.author.displayAvatarURL)
+                .setColor(0x00AE86);
+            return message.embed(embed);
+        };
+
+        var insert = function(user){
+            db.run("INSERT INTO users(nom, money) VALUES(?, ?)", [user, 0]);
+            return message.reply("Vous venez d'être ajouté dans la banque, bienvenue !");
+        };
+
+        db.get("SELECT money FROM users WHERE nom = ?",[message.author.username], (err, row) => {
             if(err){
-                console.log(err);
-            } else {
-                const embed = new RichEmbed()
-                      .setDescription("Vous avez : " + row.money)
-                      .setAuthor(message.author.username, message.author.displayAvatarURL)
-                      .setColor(0x00AE86)
-                      .setTimestamp();
-                message.embed(embed);
+                console.log(err.message);
             }
+            return row
+                ? get(row.money)
+                : insert(message.author.username);
         });
     }
 }
