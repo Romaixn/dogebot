@@ -16,25 +16,29 @@ class DailyCommand extends Command {
     }
 
     run(message){
-        console.log("Je suis bien dans le run");
-        var money;
-        console.log("Je suis après la variable");
-        db.each("SELECT * from users where nom = ?", [message.author.name], function(err, row){
-            console.log("Je suis après le db.each");
+        var insert = function(nom, money){
+            let newMoney = money + 100;
+            db.run("UPDATE users SET money = ? where nom = ?", [newMoney, nom]);
+            let embed = new RichEmbed()
+                .setTitle("Daily | " + nom)
+                .setDescription("Vous avez maintenant: " + newMoney + "€")
+                .setAuthor(message.author.username, message.author.displayAvatarURL)
+                .setColor(0x00AE86);
+            return message.embed(embed);
+
+        };
+        var ajout = function(name){
+            db.run("INSERT INTO users(nom, money) VALUES(?, ?)", [name, 0]);
+            return message.reply("Vous venez d'être ajouté dans la banque, bienvenue !");
+        };
+
+        db.get("SELECT money FROM users WHERE nom = ?" , [message.author.username], (err, row) => {
             if(err){
-                console.log("Je suis dans la condition err");
-                console.log(err);
-            } else {
-                console.log("Je suis dans le else");
-                money = row.money;
-                console.log(typeof money);
-                db.run('UPDATE users SET money = ? where nom = ?', [money+100, row.nom]).catch(error);
-                const embed = new RichEmbed()
-                      .setTitle("Daily")
-                      .setDescription("Vous avez maintenant " + row.money)
-                      .setColor(0x00AE86);
-                message.embed(embed);
+                console.log(err.message);
             }
+            return row
+                ? insert(message.author.username, row.money)
+                : ajout(message.author.username);
         });
     }
 }
