@@ -15,7 +15,7 @@ class PornCommand extends commando.Command {
     }
 
     run(message, args) {
-        randomPuppy('porn')
+        randomPuppy('nsfw_gifs')
             .then(url => {
                 const embed = new Discord.RichEmbed()
                       .setTitle("NSFW | Porn")

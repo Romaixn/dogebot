@@ -38,4 +38,4 @@ bot.on('ready', () => {
     bot.user.setActivity("zizi-couilles.fr");
 });
 
-bot.login(config.tokenDev);
+bot.login(config.token);
