@@ -24,6 +24,7 @@
     "node-opus": "^0.3.1",
     "node-wolfram": "0.0.1",
     "random-puppy": "^1.1.0",
+    "request": "^2.88.0",
     "scrape-it": "^5.1.0",
     "sqlite": "^3.0.0",
     "sqlite3": "^4.0.4",
