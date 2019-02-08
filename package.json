@@ -1,22 +1,31 @@
 {
   "name": "bot",
   "version": "1.0.0",
-  "description": "Bot Discord",
+  "description": "A Doge Discord bot",
   "main": "bot.js",
+  "private": true,
   "scripts": {
     "start": "node bot.js"
   },
+  "bugs": {
+    "url": "http://git.rherault.fr/r.herault/bot/issues/new"
+  },
+  "homepage": "http://git.rherault.fr/r.herault/bot",
+  "license": "MIT",
+  "keywords": [
+    "bot",
+    "discord",
+    "game"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/r.herault/bot.git"
+    "url": "http://git.rherault.fr/r.herault/bot.git"
   },
-  "keywords": [],
-  "author": "Romain Herault",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://gitlab.com/r.herault/bot/issues"
+  "author": {
+    "name": "Romain Herault",
+    "email": "romain.herault@protonmail.com",
+    "url": "http://rherault.fr"
   },
-  "homepage": "https://gitlab.com/r.herault/bot#readme",
   "dependencies": {
     "discord.js": "^11.4.2",
     "discord.js-commando": "^0.10.0",
