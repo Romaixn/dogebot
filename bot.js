@@ -34,8 +34,26 @@ bot.registry
 
 // Initialisation du BOT
 bot.on('ready', () => {
-    console.log("---------- DOGE BOT CONNECTED ----------");
-    bot.user.setActivity("zizi-couilles.fr");
+    console.log(`${bot.user.username} est connecté, avec ${bot.users.size} utilisateurs, dans ${bot.channels.size} channel de ${bot.guilds.size} serveurs.`);
+    bot.user.setActivity(`Connecté à ${bot.guilds.size} serveurs`);
 });
 
-bot.login(config.token);
+// Quand le bot rejoint un serveur
+bot.on("guildCreate", guild => {
+    console.log(`Nouveau serveur : ${guild.name} (id: ${guild.id}). Ce serveur a ${guild.memberCount} membres!`);
+    bot.users.get(config.owner).send(`Nouveau serveur : ${guild.name} (id: ${guild.id}). Ce serveur a ${guild.memberCount} membres!`)
+    bot.user.setActivity(`Connecté à ${bot.guilds.size} serveurs`);
+});
+
+// Quand le bot quitte un serveur
+bot.on("guildDelete", guild => {
+    console.log(`J'ai été supprimé de ${guild.name} (id: ${guild.id})`);
+    bot.users.get(config.owner).send(`J'ai été supprimé de ${guild.name} (id: ${guild.id})`)
+    bot.user.setActivity(`Connecté à ${bot.guilds.size} serveurs`);
+});
+
+bot.on('error', error => {
+    bot.users.get(config.owner).send(`HELP ${guild.name}`);
+});
+
+bot.login(config.tokenDev);
