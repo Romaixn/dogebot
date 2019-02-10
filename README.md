@@ -1,15 +1,17 @@
-# Projet bot Discord
+# Doge Bot
 
-Pour installer les dépendances :
+To install dependencies :
 ```
 npm install
 ```
 
-Pour lancer le bot :
+To start the bot :
 ```
 npm start
 ```
 
-## Développeur
+To invite the bot to a discord server, click [here](https://discordapp.com/api/oauth2/authorize?client_id=512614930697158656&permissions=8&scope=bot).
+
+## Developer
 
 * **Romain HERAULT** - *Master* - [r.herault](http://rherault.fr)
