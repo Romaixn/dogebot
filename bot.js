@@ -53,7 +53,7 @@ bot.on("guildDelete", guild => {
 });
 
 bot.on('error', error => {
-    bot.users.get(config.owner).send(`HELP ${guild.name}`);
+    bot.users.get(config.owner).send(`HELP ${error}`);
 });
 
 bot.login(config.tokenDev);
