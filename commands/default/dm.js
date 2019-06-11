@@ -32,7 +32,8 @@ class DmCommand extends commando.Command {
     }
 
     run(message, { user, content }){
-        return user.send(content);
+        user.send(content);
+        message.delete();
     }
 }
 

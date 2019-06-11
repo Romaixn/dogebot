@@ -10,13 +10,6 @@ class PlayCommand extends commando.Command {
             description: 'Joue un son sur YouTube dans un channel vocal',
             examples: ['!play <youtube_url>'],
             guildOnly: true,
-            args: [
-                {
-                    key: 'args',
-                    prompt: 'Quelle video YouTube souhaites-tu jouer ?',
-                    type: 'string'
-                }
-            ]
         });
     }
 

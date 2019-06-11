@@ -14,7 +14,6 @@ class IpLocateCommand extends commando.Command {
   }
 
   async run(message, args) {
-    console.log(args);
     request(
       {
         url: `https://api.kwelo.com/v1/network/ip-address/location/${args}`,
