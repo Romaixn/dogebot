@@ -1,6 +1,6 @@
 const commando = require('discord.js-commando');
 const scrapeIt = require('scrape-it')
-var liste = [];
+const liste = [];
 
 class DefisCommand extends commando.Command {
   constructor(client) {
@@ -19,7 +19,7 @@ class DefisCommand extends commando.Command {
         listItem: "div.title",
       }
     }).then(({ data, response }) => {
-      var i;
+      let i;
       for (i = 0; i < data.defis.length; i++) {
         if (!liste.includes(data.defis[i])) {
           liste.push(data.defis[i])

@@ -1,6 +1,6 @@
 const commando = require('discord.js-commando');
 const Discord = require('discord.js');
-const randomPuppy = require('random-puppy');
+const requestHandler = require('../../utils/reddit.js');
 
 class RabbitCommand extends commando.Command {
     constructor(client) {
@@ -14,13 +14,13 @@ class RabbitCommand extends commando.Command {
     }
 
     run(message, args) {
-        randomPuppy('Rabbits')
-            .then(url => {
+        requestHandler.makeRequest("reddit", "rabbits", false)
+            .then(json => {
                 const embed = new Discord.RichEmbed()
-                      .setTitle("Lapin")
-                      .setColor(0x00AE86)
-                      .setImage(url);
-                message.channel.send({ embed });
+                    .setTitle("Lapin")
+                    .setColor(0x00AE86)
+                    .setImage(json.url)
+                message.channel.send({ embed })
             });
     }
 }
