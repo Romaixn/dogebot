@@ -29,7 +29,7 @@
   "dependencies": {
     "discord.js": "^11.4.2",
     "discord.js-commando": "^0.10.0",
-    "kaori": "^1.2.0",
+    "kaori": "^2.0.4",
     "node-fetch": "^2.6.0",
     "node-opus": "^0.3.1",
     "node-wolfram": "0.0.1",
