@@ -35,7 +35,7 @@
     "node-wolfram": "0.0.1",
     "request": "^2.88.0",
     "scrape-it": "^5.1.0",
-    "sqlite": "^3.0.0",
+    "sqlite": "^4.0.22",
     "sqlite3": "^4.0.4",
     "youtube-audio-stream": "^0.3.7"
   }
