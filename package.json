@@ -27,7 +27,7 @@
     "url": "http://rherault.fr"
   },
   "dependencies": {
-    "discord.js": "^11.4.2",
+    "discord.js": "^12.5.3",
     "kaori": "^2.0.4",
     "discord.js-commando": "^0.12.3",
     "node-fetch": "^2.6.0",
