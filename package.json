@@ -28,8 +28,8 @@
   },
   "dependencies": {
     "discord.js": "^11.4.2",
-    "discord.js-commando": "^0.10.0",
     "kaori": "^2.0.4",
+    "discord.js-commando": "^0.12.3",
     "node-fetch": "^2.6.0",
     "node-opus": "^0.3.1",
     "node-wolfram": "0.0.1",
@@ -37,6 +37,6 @@
     "scrape-it": "^5.1.0",
     "sqlite": "^3.0.0",
     "sqlite3": "^4.0.4",
-    "youtube-audio-stream": "^0.2.0"
+    "youtube-audio-stream": "^0.3.7"
   }
 }
