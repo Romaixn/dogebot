@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "discord.js": "^11.4.2",
-    "discord.js-commando": "^0.10.0",
+    "discord.js-commando": "^0.12.3",
     "kaori": "^1.2.0",
     "node-fetch": "^2.6.0",
     "node-opus": "^0.3.1",
